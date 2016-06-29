@@ -1,0 +1,67 @@
+:local .message {
+  position: fixed;
+  z-index: 99999;
+  top: 20%;
+  right: 20%;
+  left: 20%;
+  min-height: 10%;
+  border-radius: 5px;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+:local .message .close {
+  background-color: #fff;
+  color: #999;
+  top: -15px;
+  right: -15px;
+  width: 30px;
+  line-height: 30px;
+  height: 30px;
+  position: absolute;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+:local .message .close:hover {
+  color: #000;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 22.5px;
+  line-height: 28.5px;
+}
+
+:local .message .content {
+  max-width: 80%;
+}
+
+:local .info {
+  border: 1px solid #1F8DD6;
+}
+
+:local .success {
+  border: 1px solid #50CD84;
+}
+
+:local .warning {
+  border: 1px solid #FF8859;
+}
+
+:local .error {
+  border: 1px solid #FF5F5F;
+}
+
+:local .default {
+  border: 1px solid #DEDEDE;
+}

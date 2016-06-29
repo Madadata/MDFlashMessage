@@ -1,5 +1,4 @@
 import 'babel-polyfill';
-import jsdom from 'mocha-jsdom';
 import React from 'react';
 import expect from 'expect';
 import expectJSX from 'expect-jsx';
@@ -10,8 +9,6 @@ import MDFlashMessage from 'src/MDFlashMessage';
 expect.extend(expectJSX);
 
 describe('MDFlashMessage', () => {
-
-  jsdom();
 
   describe('empty props', () => {
 
@@ -57,12 +54,13 @@ describe('MDFlashMessage', () => {
       expect(wrapper.childAt(1).text()).toInclude('hello world');
     });
 
-    it('should render null after given duration', async () => {
+    it('should render null after given duration', (done) => {
       const wrapper = mount(<MDFlashMessage timeout={1000} />);
-      await setTimeout(() => {
+      setTimeout(() => {
         const hidden = wrapper.state().hidden;
         expect(hidden).toBe(true);
-      }, 2000);
+        done();
+      }, 1001)
     });
 
   })
