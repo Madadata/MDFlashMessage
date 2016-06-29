@@ -1,0 +1,71 @@
+:root {
+  --closeRadius: 15px;
+
+  --infoColor: #1F8DD6;
+  --successColor: #50CD84;
+  --warningColor: #FF8859;
+  --errorColor: #FF5F5F;
+  --defaultColor: #DEDEDE;
+}
+
+:local .message {
+  position: fixed;
+  z-index: 99999;
+  top: 20%;
+  right: 20%;
+  left: 20%;
+  min-height: 10%;
+  border-radius: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .close {
+    background-color: #fff;
+    color: #999;
+
+    top: -var(--closeRadius);
+    right: -var(--closeRadius);
+    width: calc(var(--closeRadius)*2);
+    line-height: calc(var(--closeRadius)*2);
+    height: calc(var(--closeRadius)*2);
+    position: absolute;
+
+    text-align: center;
+    border-radius: var(--closeRadius);
+
+    cursor: pointer;
+  }
+
+  .close:hover {
+    color: #000;
+    transition: 0.3s;
+    font-size: calc(var(--closeRadius)*1.5);
+    line-height: calc(var(--closeRadius)*1.9);
+  }
+
+  .content {
+    max-width: 80%;
+  }
+}
+
+:local .info {
+  border: 1px solid var(--infoColor);
+}
+
+:local .success {
+  border: 1px solid var(--successColor);
+}
+
+:local .warning {
+  border: 1px solid var(--warningColor);
+}
+
+:local .error {
+  border: 1px solid var(--errorColor);
+}
+
+:local .default {
+  border: 1px solid var(--defaultColor);
+}
