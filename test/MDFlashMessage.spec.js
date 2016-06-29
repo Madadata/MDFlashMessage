@@ -63,7 +63,6 @@ describe('MDFlashMessage', () => {
         const hidden = wrapper.state().hidden;
         expect(hidden).toBe(true);
       }, 2000);
-
     });
 
   })
