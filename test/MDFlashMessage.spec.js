@@ -54,12 +54,10 @@ describe('MDFlashMessage', () => {
       expect(wrapper.childAt(1).text()).toInclude('hello world');
     });
 
-    it('should render null after given duration', (done) => {
+    it('should render null after given duration', async() => {
       const wrapper = mount(<MDFlashMessage timeout={1000} />);
-      setTimeout(() => {
-        const hidden = wrapper.state().hidden;
-        expect(hidden).toBe(true);
-        done();
+      await setTimeout(() => {
+        expect(wrapper.state().hidden).toBe(true);
       }, 1001)
     });
 
