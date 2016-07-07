@@ -21,19 +21,6 @@ class MDFlashMessage extends Component {
     }
   }
 
-  handleTimeout() {
-    this.setState({
-      hidden: true,
-    })
-  }
-
-  handleClick(e) {
-    e.preventDefault();
-    this.setState({
-      hidden: true,
-    })
-  }
-
   getMessageJSX() {
     const { type, message } = this.props;
     const messageType = type || 'default';
@@ -49,7 +36,7 @@ class MDFlashMessage extends Component {
             x
           </div>
           <div className={styles.content}>
-            { message }
+            {message}
           </div>
         </div>
       );
@@ -57,10 +44,21 @@ class MDFlashMessage extends Component {
     return null;
   }
 
+  handleTimeout() {
+    this.setState({
+      hidden: true,
+    });
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    this.setState({
+      hidden: true,
+    });
+  }
+
   render() {
-    const { display } = this.state;
-    const messageJSX = this.getMessageJSX();
-    return messageJSX;
+    return this.getMessageJSX();
   }
 
 }
